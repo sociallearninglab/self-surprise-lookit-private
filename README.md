@@ -1,6 +1,6 @@
-# self-surprise-lookit-private
+## this is the repository for self-surprise-lookit-private
 
-## repo structure 
+### repo structure 
 
 ```
 ├── img
