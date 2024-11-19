@@ -107,40 +107,14 @@ function generateProtocol(child, pastSessions) {
                     },
                     'nextButtonText': 'Finish Study'
                 },
-                'study-intro': {
-                    'blocks': [
-                        {
-                            'emph': true,
-                            'text': 'Your child does not need to be with you until the videos begin. First, let\'s go over what will happen!',
-                            'title': 'Overview of the \'Imagine That!\' study'
-                        },
-                        {
-                            'text': 'During this study, your child will play a card game while we record where he or she chooses to look, as well as verbal responses to questions after the game is complete.'
-                        },
-                        {
-                            'text': 'You\'ll have a chance to preview the game ahead of time. After reading the instructions you\'ll start the experiment when you and your child are ready.'
-                        },
-                        {
-                            'text': 'The card game section will take about 2 minutes.'
-                        },
-                        {
-                            'text': 'After the game, you will answer a few final questions. Then you\'re all done!'
-                        }
-                    ],
-                    'showPreviousButton': false,
-                    'kind': 'exp-lookit-text'
-                },
 
                 'welcome-to-my-game': {
                     'kind': 'exp-lookit-images-audio',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main/',
                     'audio': 'majority_cards_intro',
                     'audioTypes': ['mp3'],
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'images': [
                         {
                             'id': 'welcome',
@@ -152,9 +126,10 @@ function generateProtocol(child, pastSessions) {
                         'text': '<h3>For Parents</h3><p>Click next when you\'re ready to continue!</p>',
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
-                    },
+                    }, 
                     'nextButtonText': 'Next',
-                    'nextButtonDelay': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'showPreviousButton': false
                 },
                 'majority-intro-1': {
@@ -173,11 +148,10 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'videoTypes': ['mp4']
                 },
                 
@@ -190,13 +164,12 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'star',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'maximumAudioImageLoop': 1,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
@@ -216,7 +189,7 @@ function generateProtocol(child, pastSessions) {
                         }
                     ]
                 },
-
+                
                 'majority-test-lose': {
                     'kind': 'exp-lookit-images-audio',
                     'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: \'star\', src: \'star_hd.png\', left: centerOffset, top: 30, width: 15, height: 35, feedbackAudio: \'control_question_losers_incorrect\' }); images.push({ id: \'dash\', src: \'dash_card.png\', left: centerOffset + spacing, top: 30, width: 15, height: 35, feedbackAudio: \'control_question_losers_correct\' }); return { images: images }; }',
@@ -226,13 +199,12 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'dash',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'maximumAudioImageLoop': 1,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
@@ -252,7 +224,9 @@ function generateProtocol(child, pastSessions) {
                         }
                     ]
                     },
-                'majority-intro-2': {
+
+    
+            'majority-intro-2': {
                     'kind': 'exp-lookit-video',
                     'video': {
                         'top': 0,
@@ -268,209 +242,117 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
                 },
 
-                'majority-your-turn': {
-                    'kind': 'exp-lookit-images-audio',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main/',
-                    'audio': 'cards_setof12_shuffle_reminder',
-                    'audioTypes': ['mp3'],
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'nextButtonText': 'Next',
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'showPreviousButton': false
-                },
+            'majority-select-1-combined': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId; let images = []; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_feedback" }); } return { images: images, audio: "10_11_12", highlights: selectedImage ? [{ imageId: selectedImage, range: [0, 999], color: "blue" }] : [] }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audioTypes': ['mp3'],
+                'choiceRequired': true,
+                'feedbackAudio': true,
+                'waitForEndAudio': true,
+                'showReplayButton': false,
+                'showPreviousButton': false,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'nextButtonDelay': 0,
+                'parentTextBlock': {
+                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                    'backgroundColor': '#f8f3bf',
+                    'fontSize': '12px',
+                }
+            },
 
-                'majority-your-turn-instructions': {
-                    'kind': 'exp-lookit-images-audio',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main/',
-                    'audio': 'cards_setof12_picking_instructions',
-                    'audioTypes': ['mp3'],
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'nextButtonText': 'Next',
-                    'showPreviousButton': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-                'majority-select-1': {
-                    'kind': 'exp-lookit-images-audio',
-                    'audio': 'cards_selected_feedback',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: false, correct: true }); } return { images: images, selectedCards: [] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false
-                },
-                'majority-select-1-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstSelection = expData[sequence[sequence.length - 1]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: [{ imageId: firstSelection, range: [0, 999], color: \'grey\' }] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
+            'majority-select-2-combined': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstFrameId = sequence[sequence.length - 1]; const firstFrame = expData[firstFrameId]; console.log("First frame ID:", firstFrameId); console.log("First frame data:", firstFrame); console.log("Event timings:", firstFrame?.eventTimings); const clickEvent = firstFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); console.log("Click event:", clickEvent); const firstSelection = clickEvent?.imageId; console.log("First selection:", firstSelection); let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === firstSelection; images.push({ id: cardNum, src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected, feedbackAudio: "cards_selected_feedback" }); } return { images: images, audio: "cards_selected_next", highlights: [] }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audioTypes': ['mp3'],
+                'choiceRequired': true,
+                'feedbackAudio': true,
+                'waitForEndAudio': true,
+                 'showReplayButton': false,
+                'showPreviousButton': false,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'nextButtonDelay': 0,
+                'parentTextBlock': {
+                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                    'backgroundColor': '#f8f3bf',
+                    'fontSize': '12px',
+                }
+            },
 
-                'majority-select-2': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelection = expData[sequence[sequence.length - 2]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === previousSelection; images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, selectedCards: [previousSelection], highlights: [{ imageId: previousSelection, range: [0, 999], color: \'grey\' }] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_next',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false
-                },
-                'majority-select-2-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-                'majority-select-3': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = previousSelections.includes(cardNum); images.push({ id: cardNum, src: \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, selectedCards: previousSelections, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_last',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false
-                },
+            'majority-select-3-combined': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const secondLastFrameId = sequence[sequence.length - 2]; const lastFrameId = sequence[sequence.length - 1]; const secondLastFrame = expData[secondLastFrameId]; const lastFrame = expData[lastFrameId]; const secondLastClickEvent = secondLastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const lastClickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const secondLastSelection = secondLastClickEvent?.imageId; const lastSelection = lastClickEvent?.imageId; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isPreviouslySelected = cardNum === secondLastSelection || cardNum === lastSelection; images.push({ id: cardNum, src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isPreviouslySelected, feedbackAudio: "cards_selected_reveal_transition" }); } return { images: images, audio: "cards_selected_last", highlights: [] }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audioTypes': ['mp3'],
+                'choiceRequired': true,
+                'feedbackAudio': true,
+                 'showReplayButton': false,
+                'showPreviousButton': false,
+                'waitForEndAudio': true,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'nextButtonDelay': 0,
+                'parentTextBlock': {
+                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                    'backgroundColor': '#f8f3bf',
+                    'fontSize': '12px',
+                }
+            },
 
-                'majority-reveal-cardbacks': {
+            'majority-reveal-stars': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const frameIds = [sequence[sequence.length - 3], sequence[sequence.length - 2], sequence[sequence.length - 1]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? "star_hd_selected.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audio': 'cards_selected_reveal',
+                'waitForEndAudio': true,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'mustPlay': false,
+                 'showReplayButton': false,
+                'showPreviousButton': false,
+                'mustPlayCount': 0,
+                'minDurationToAudioEnd': 0,
+                'audioTypes': ['mp3']
+            },
+
+            'majority-reveal-feedback': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); images.push({ id: String(i + 1), src: \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: allSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal_transition',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-                'majority-reveal-stars': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? \'star_hd_selected.png\' : \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-                'majority-reveal-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 7]].selectedImage, expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? \'star_hd_selected.png\' : \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const frameIds = [sequence[sequence.length - 4], sequence[sequence.length - 3], sequence[sequence.length - 2]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? "star_hd_selected.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audio': 'majority_cards_selected_feedback',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
+                    'nextButtonDelay': 5000,
                     'audioTypes': ['mp3']
                 },
 
-                'majority-surprise-rating': {
+                'majority-surprise-rating-combined': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: \'not_surprised\', src: \'not_surprised.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: \'a_little_surprised\', src: \'a_little_surprised.png\', left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: \'very_surprised\', src: \'very_surprised.png\', left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); return { images: images }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = [{id: "background", src: "3_stars.png", left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: "not_surprised", src: "not_surprised.png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_not_why" }); images.push({ id: "a_little_surprised", src: "a_little_surprised.png", left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_little_why" }); images.push({ id: "very_surprised", src: "very_surprised.png", left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_very_why" }); return { images: images }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audio': 'surprise_scale',
                     'audioTypes': ['mp3'],
                     'choiceRequired': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
+                    'nextButtonDelay': 7000,
+                    'feedbackAudio': true,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
                         'backgroundColor': '#f8f3bf',
@@ -494,38 +376,20 @@ function generateProtocol(child, pastSessions) {
                         }
                     ]
                 },
-                'majority-surprise-why': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let theaudio = \'surprise_scale_not_why\'; let selectedImage = expData[sequence[sequence.length - 1]][\'selectedImage\']; if (selectedImage === \'a_little_surprised\') { theaudio = \'surprise_scale_little_why\'; } else if (selectedImage === \'very_surprised\') { theaudio = \'surprise_scale_very_why\'; } let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + \'.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: theaudio }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    }
-                },
+                
+                
                 'majority-surprise-how': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let selectedImage = expData[sequence[sequence.length - 2]][\'selectedImage\']; let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + \'.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: \'majority_cards_how\' }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId || "not_surprised"; let images = [{id: "background", src: "3_stars.png", left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + ".png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: "majority_cards_how-2" }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audioTypes': ['mp3'],
                     'choiceRequired': false,
                     'autoProceed': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
@@ -533,28 +397,54 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': 'yellow'
                     }
                 },
+                
+                
                 'majority-transition': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let selectedImage = expData[sequence[sequence.length - 3]][\'selectedImage\']; let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + \'.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: \'majority_transition\' }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'autoProceed': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    }
-                },
+                        'kind': 'exp-lookit-video',
+                        'video': {
+                            'top': 0,
+                            'left': 0,
+                            'width': 100,
+                            'source': '3_suns_majority_transition',
+                            'loop': false
+                        },
+                        'backgroundColor': 'black',
+                        'autoProceed': false,
+                        'parentTextBlock': {
+                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'backgroundColor': '#f8f3bf',
+                            'fontSize': '14px'
+                        },
+                        'showPreviousButton': false,
+                        'showReplayButton': false,
+                        'doRecording': false,
+                        'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                        'videoTypes': ['mp4']
+                    },
 
-                // Beginning of condition-specific minority frames
+                    'minority-intro-0': {
+                        'kind': 'exp-lookit-video',
+                        'video': {
+                            'top': 0,
+                            'left': 0,
+                            'width': 100,
+                            'source': 'minority_transition_video',
+                            'loop': false
+                        },
+                        'backgroundColor': 'black',
+                        'autoProceed': false,
+                        'parentTextBlock': {
+                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'backgroundColor': '#f8f3bf',
+                            'fontSize': '14px'
+                        },
+                        'showPreviousButton': false,
+                        'showReplayButton': true,
+                        'doRecording': false,
+                        'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                        'videoTypes': ['mp4']
+                    },
+
                 'minority-intro-1': {
                     'kind': 'exp-lookit-video',
                     'video': {
@@ -571,9 +461,8 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
@@ -588,11 +477,10 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'sun',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
                     'maximumAudioImageLoop': 1,
@@ -624,11 +512,10 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'dash',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
                     'maximumAudioImageLoop': 1,
@@ -667,263 +554,192 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
                 },
-                'minority-select-1': {
+                
+                'minority-select-1-combined': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: false, correct: true }); } return { images: images, markedPositions: markedPositions }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId; let images = []; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_feedback" }); } return { images: images, audio: "select_first_card", highlights: selectedImage ? [{ imageId: selectedImage, range: [0, 999], color: "blue" }] : [] }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback',
                     'audioTypes': ['mp3'],
                     'choiceRequired': true,
+                    'feedbackAudio': true,
+                    'waitForEndAudio': true,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'nextButtonDelay': 0,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
                         'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
+                        'fontSize': '12px',
+                    }
                 },
-                'minority-select-1-feedback': {
+                
+                'minority-select-2-combined': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstSelection = expData[sequence[sequence.length - 1]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, markedPositions: markedPositions, highlights: [{ imageId: firstSelection, range: [0, 999], color: \'grey\' }] }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelection = expData[sequence[sequence.length - 1]]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === previousSelection; images.push({ id: cardNum, src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_feedback", nonChoiceOption: isSelected }); } return { images: images, audio: "cards_selected_next", highlights: [] }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': 'yellow'
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-                'minority-select-2': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelection = expData[sequence[sequence.length - 2]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === previousSelection; const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, markedPositions: markedPositions, selectedCards: [previousSelection], highlights: [{ imageId: previousSelection, range: [0, 999], color: \'grey\' }] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_next',
                     'audioTypes': ['mp3'],
                     'choiceRequired': true,
+                    'feedbackAudio': true,
+                    'waitForEndAudio': true,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'nextButtonDelay': 0,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
                         'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
+                        'fontSize': '12px',
+                    }
                 },
-
-                'minority-select-2-feedback': {
+                
+                'minority-select-3-combined': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, markedPositions: markedPositions, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstSelection = expData[sequence[sequence.length - 2]]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId; const secondSelection = expData[sequence[sequence.length - 1]]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === firstSelection || cardNum === secondSelection; images.push({ id: cardNum, src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_reveal_transition", nonChoiceOption: isSelected }); } return { images: images, audio: "cards_selected_last", highlights: [] }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
                     'audioTypes': ['mp3'],
-                    'choiceRequired': false
-                },
-                'minority-select-3': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = previousSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, markedPositions: markedPositions, selectedCards: previousSelections, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_last',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true
-                },
-                'minority-reveal-cardbacks': {
-                    'kind': 'exp-lookit-images-audio',
-                     "generateProperties": "function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); let cardSrc; if (isSelected) { if (isMarked) { cardSrc = 'sun_hd_selected.png'; } else { cardSrc = 'dash_card.png'; } } else if (isMarked) { cardSrc = 'card_back_marker_hd.png'; } else { cardSrc = 'card_back_hd.png'; } images.push({ id: cardNum, src: cardSrc, left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }",
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal_transition',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
+                    'choiceRequired': true,
+                    'feedbackAudio': true,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf',
+                        'fontSize': '12px',
+                    }
                 },
+                
                 'minority-reveal-suns': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); let cardSrc; if (isSelected) { if (isMarked) { cardSrc = \'sun_hd_selected.png\'; } else { cardSrc = \'dash_card.png\'; } } else if (isMarked) { cardSrc = \'card_back_hd.png\'; } else { cardSrc = \'card_back_hd.png\'; } images.push({ id: cardNum, src: cardSrc, left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const sunPositions = pastSessions?.find(session => session.get("sunPositions"))?.get("sunPositions") || []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const frameIds = [sequence[sequence.length - 3], sequence[sequence.length - 2], sequence[sequence.length - 1]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); let images = []; for (let i = 0; i < 12; i++) { const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); const isSunCard = sunPositions.includes(i + 1); images.push({ id: cardNum, src: isSelected ? (isSunCard ? "sun_hd_selected.png" : "sun_hd_selected.png") : "card_back_hd.png", left: startLeft + ((i % 6) * horizontalSpacing), top: startTop + (Math.floor(i / 6) * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audio': 'cards_selected_reveal',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-
-                'minority-reveal-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 7]].selectedImage, expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); let cardSrc; if (isSelected) { if (isMarked) { cardSrc = \'sun_hd_selected.png\'; } else { cardSrc = \'dash_card.png\'; } } else if (isMarked) { cardSrc = \'card_back_hd.png\'; } else { cardSrc = \'card_back_hd.png\'; } images.push({ id: cardNum, src: cardSrc, left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'minority_cards_selected_feedback',
-                    'waitForEndAudio': false,
                     'audioTypes': ['mp3']
                 },
                 
-                "minority-surprise-rating": {
-    "kind": "exp-lookit-images-audio",
-    "generateProperties": "function(expData, sequence, child, pastSessions) { const allSelections = [expData[sequence[sequence.length - 8]].selectedImage, expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage]; const markedPositions = [[0,1], [0,4], [1,1]]; const correctSuns = allSelections.filter(selection => markedPositions.some(pos => pos[0] === Math.floor((parseInt(selection) - 1) / 6) && pos[1] === (parseInt(selection) - 1) % 6)).length; const backgroundImage = correctSuns === 1 ? 'one_sun.png' : (correctSuns === 2 ? 'two_suns.png' : '3_suns.png'); let images = [{id: 'background', src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: 'fill'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: 'not_surprised', src: 'not_surprised.png', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: 'a_little_surprised', src: 'a_little_surprised.png', left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: 'very_surprised', src: 'very_surprised.png', left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); return { images: images }; }",
-    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-    "audio": "surprise_scale",
-    "audioTypes": ["mp3"],
-    "choiceRequired": true,
-    "waitForEndAudio": false,
-    "parentTextBlock": {
-        "text": '<h3>For Parents</h3><p><h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p></p>',
-        "backgroundColor": "#f8f3bf"
-    },
-    "highlights": [
-        {
-            "range": [1.75, 2.75],
-            "imageId": "not_surprised",
-            "color": "yellow"
-        },
-        {
-            "range": [3.75, 4.75],
-            "imageId": "a_little_surprised",
-            "color": "yellow"
-        },
-        {
-            "range": [5.75, 6.75],
-            "imageId": "very_surprised",
-            "color": "yellow"
-        }
-    ]
-},
-
-"minority-surprise-why": {
-    "kind": "exp-lookit-images-audio",
-    "generateProperties": "function(expData, sequence, child, pastSessions) { let theaudio = 'surprise_scale_not_why'; let selectedImage = expData[sequence[sequence.length - 1]]['selectedImage']; if (selectedImage === 'a_little_surprised') { theaudio = 'surprise_scale_little_why'; } else if (selectedImage === 'very_surprised') { theaudio = 'surprise_scale_very_why'; } const allSelections = [expData[sequence[sequence.length - 9]].selectedImage, expData[sequence[sequence.length - 7]].selectedImage, expData[sequence[sequence.length - 5]].selectedImage]; const markedPositions = [[0,1], [0,4], [1,1]]; const correctSuns = allSelections.filter(selection => markedPositions.some(pos => pos[0] === Math.floor((parseInt(selection) - 1) / 6) && pos[1] === (parseInt(selection) - 1) % 6)).length; const backgroundImage = correctSuns === 1 ? 'one_sun.png' : (correctSuns === 2 ? 'two_suns.png' : '3_suns.png'); let images = [{id: 'background', src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: 'fill'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + '.png', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: theaudio }; }",
-    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-    "audioTypes": ["mp3"],
-    "choiceRequired": false,
-    "autoProceed": false,
-    "parentTextBlock": {
-        "text": '<h3>For Parents</h3><p><h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p></p>',
-        "backgroundColor": "#f8f3bf"
-    }
-},
-
-"minority-surprise-how": {
-    "kind": "exp-lookit-images-audio",
-    "generateProperties": "function(expData, sequence, child, pastSessions) { let selectedImage = expData[sequence[sequence.length - 2]]['selectedImage']; const allSelections = [expData[sequence[sequence.length - 10]].selectedImage, expData[sequence[sequence.length - 8]].selectedImage, expData[sequence[sequence.length - 6]].selectedImage]; const markedPositions = [[0,1], [0,4], [1,1]]; const correctSuns = allSelections.filter(selection => markedPositions.some(pos => pos[0] === Math.floor((parseInt(selection) - 1) / 6) && pos[1] === (parseInt(selection) - 1) % 6)).length; const backgroundImage = correctSuns === 1 ? 'one_sun.png' : (correctSuns === 2 ? 'two_suns.png' : '3_suns.png'); let images = [{id: 'background', src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: 'fill'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + '.png', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: 'majority_cards_how' }; }",
-    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-    "audioTypes": ["mp3"],
-    "choiceRequired": false,
-    "autoProceed": false,
-    "parentTextBlock": {
-        "text": '<h3>For Parents</h3><p><h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p></p>',
-        "backgroundColor": "#f8f3bf"
-    }
-},
-        
-        "explore-more-test": {
-            "kind": "exp-lookit-images-audio",
-            "generateProperties": "function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: 'same', src: 'sun_dash_cards.png', left: centerOffset, top: 30, width: 25, height: 45 }); images.push({ id: 'different', src: 'background_2.png', left: centerOffset + spacing, top: 30, width: 25, height: 45 }); return { images: images }; }",
-            "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-            "audio": "exploration_selection",
-            "audioTypes": ["mp3"],
-            "choiceRequired": true,
-            "parentTextBlock": {
-                "text": "Please don’t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say ‘Okay!’ when your child answers - don’t give any hints or say whether you agree!",
-                "backgroundColor": "#f8f3bf"
-            },
-    "highlights": [
-      {
-        "range": [8, 10],
-        "imageId": "same",
-        "color": "yellow"
-      },
-      {
-        "range": [11.5, 13.5],
-        "imageId": "different",
-        "color": "yellow"
-      }
-    ]
-        }
+                'minority-surprise-rating-combined': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const frameIds = [sequence[sequence.length - 5], sequence[sequence.length - 4], sequence[sequence.length - 3]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); const correctSelections = selections.filter(selection => { const pos = parseInt(selection) - 1; const row = Math.floor(pos / 6); const col = pos % 6; return markedPositions.some(markedPos => markedPos[0] === row && markedPos[1] === col); }).length; const backgroundImage = correctSelections === 0 ? "zero_suns.png" : correctSelections === 1 ? "one_sun.png" : correctSelections === 2 ? "two_suns.png" : "3_suns.png"; let images = [{id: "background", src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: "not_surprised", src: "not_surprised.png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_not_why" }); images.push({ id: "a_little_surprised", src: "a_little_surprised.png", left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_little_why" }); images.push({ id: "very_surprised", src: "very_surprised.png", left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_very_why" }); return { images: images }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audio': 'surprise_scale',
+                    'audioTypes': ['mp3'],
+                    'choiceRequired': true,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    'mustPlayCount': 0,
+                    'minDurationToAudioEnd': 0,
+                    'nextButtonDelay': 7000,
+                    'feedbackAudio': true,
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf'
+                    },
+                    'highlights': [
+                        {
+                            'range': [1.75, 2.75],
+                            'imageId': 'not_surprised',
+                            'color': 'yellow'
+                        },
+                        {
+                            'range': [3.75, 4.75],
+                            'imageId': 'a_little_surprised',
+                            'color': 'yellow'
+                        },
+                        {
+                            'range': [5.75, 6.75],
+                            'imageId': 'very_surprised',
+                            'color': 'yellow'
+                        }
+                    ]
+                },
+                
+                'minority-surprise-how': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId || "not_surprised"; const frameIds = [sequence[sequence.length - 7], sequence[sequence.length - 6], sequence[sequence.length - 5]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); const correctSelections = selections.filter(selection => { const pos = parseInt(selection) - 1; const row = Math.floor(pos / 6); const col = pos % 6; return markedPositions.some(markedPos => markedPos[0] === row && markedPos[1] === col); }).length; const backgroundImage = correctSelections === 0 ? "zero_suns.png" : correctSelections === 1 ? "one_sun.png" : correctSelections === 2 ? "two_suns.png" : "3_suns.png"; let images = [{id: "background", src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + ".png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: "majority_cards_how-2" }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audioTypes': ['mp3'],
+                    'choiceRequired': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    'autoProceed': false,
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf'
+                    }
+                },
+                        
+                "explore-more-test": {
+                    "kind": "exp-lookit-images-audio",
+                    "generateProperties": "function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: 'same', src: 'sun_dash_cards.png', left: centerOffset, top: 30, width: 25, height: 45 }); images.push({ id: 'different', src: 'background_2.png', left: centerOffset + spacing, top: 30, width: 25, height: 45 }); return { images: images }; }",
+                    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
+                    "audio": "exploration_selection",
+                    "audioTypes": ["mp3"],
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    "choiceRequired": true,
+                    "parentTextBlock": {
+                        "text": "Please don’t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say ‘Okay!’ when your child answers - don’t give any hints or say whether you agree!",
+                        "backgroundColor": "#f8f3bf"
+                    },
+                        "highlights": [
+                          {
+                            "range": [8, 10],
+                            "imageId": "same",
+                            "color": "yellow"
+                          },
+                          {
+                            "range": [11.5, 13.5],
+                            "imageId": "different",
+                            "color": "yellow"
+                          }
+                        ]
+                            }
 
             }, // end of frames for surprising condition
             sequence: [
                 'welcome',
-                'study-intro',
                 'welcome-to-my-game',
                 'majority-intro-1',
                 'majority-test-win',
-                'majority-test-win-feedback',
                 'majority-test-lose',
-                'majority-test-lose-feedback',
                 'majority-intro-2',
-                'majority-your-turn',
-                'majority-your-turn-instructions',
-                'majority-select-1',
-                'majority-select-1-feedback',
-                'majority-select-2',
-                'majority-select-2-feedback',
-                'majority-select-3',
-                'majority-reveal-cardbacks',
+                'majority-select-1-combined',
+                'majority-select-2-combined',
+                'majority-select-3-combined',
                 'majority-reveal-stars',
                 'majority-reveal-feedback',
-                'majority-surprise-rating',
-                'majority-surprise-why',
+                'majority-surprise-rating-combined',
                 'majority-surprise-how',
                 'majority-transition',
+                'minority-intro-0',
                 'minority-intro-1',
                 'minority-test-win',
-                'minority-test-win-feedback',
                 'minority-test-lose',
-                'minority-test-lose-feedback',
                 'minority-intro-2',
-                'minority-select-1',
-                'minority-select-1-feedback',
-                'minority-select-2',
-                'minority-select-2-feedback',
-                'minority-select-3',
-                'minority-reveal-cardbacks',
+                'minority-select-1-combined',
+                'minority-select-2-combined',
+                'minority-select-3-combined',
                 'minority-reveal-suns',
-                'minority-reveal-feedback',
-                'minority-surprise-rating',
-                'minority-surprise-why',
+                'minority-surprise-rating-combined',
                 'minority-surprise-how',
                 'explore-more-test',
                 'video-config',
@@ -1039,40 +855,14 @@ function generateProtocol(child, pastSessions) {
                     },
                     'nextButtonText': 'Finish Study'
                 },
-                'study-intro': {
-                    'blocks': [
-                        {
-                            'emph': true,
-                            'text': 'Your child does not need to be with you until the videos begin. First, let\'s go over what will happen!',
-                            'title': 'Overview of the \'Imagine That!\' study'
-                        },
-                        {
-                            'text': 'During this study, your child will play a card game while we record where he or she chooses to look, as well as verbal responses to questions after the game is complete.'
-                        },
-                        {
-                            'text': 'You\'ll have a chance to preview the game ahead of time. After reading the instructions you\'ll start the experiment when you and your child are ready.'
-                        },
-                        {
-                            'text': 'The card game section will take about 2 minutes.'
-                        },
-                        {
-                            'text': 'After the game, you will answer a few final questions. Then you\'re all done!'
-                        }
-                    ],
-                    'showPreviousButton': false,
-                    'kind': 'exp-lookit-text'
-                },
 
                 'welcome-to-my-game': {
                     'kind': 'exp-lookit-images-audio',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main/',
                     'audio': 'majority_cards_intro',
                     'audioTypes': ['mp3'],
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'images': [
                         {
                             'id': 'welcome',
@@ -1086,7 +876,6 @@ function generateProtocol(child, pastSessions) {
                         'fontSize': '14px',
                     },
                     'nextButtonText': 'Next',
-                    'nextButtonDelay': 0,
                     'showPreviousButton': false
                 },
 
@@ -1109,9 +898,8 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
@@ -1126,13 +914,12 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'star',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'maximumAudioImageLoop': 1,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
@@ -1162,13 +949,12 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'dash',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'maximumAudioImageLoop': 1,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
@@ -1205,214 +991,122 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
                 },
-                'majority-your-turn': {
-                    'kind': 'exp-lookit-images-audio',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main/',
-                    'audio': 'cards_setof12_shuffle_reminder',
-                    'audioTypes': ['mp3'],
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'nextButtonText': 'Next',
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'showPreviousButton': false
-                },
+               
+                'majority-select-1-combined': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId; let images = []; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_feedback" }); } return { images: images, audio: "10_11_12", highlights: selectedImage ? [{ imageId: selectedImage, range: [0, 999], color: "blue" }] : [] }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audioTypes': ['mp3'],
+                'choiceRequired': true,
+                'feedbackAudio': true,
+                'waitForEndAudio': true,
+                'showReplayButton': false,
+                'showPreviousButton': false,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'nextButtonDelay': 0,
+                'parentTextBlock': {
+                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                    'backgroundColor': '#f8f3bf',
+                    'fontSize': '12px',
+                }
+            },
 
-                'majority-your-turn-instructions': {
-                    'kind': 'exp-lookit-images-audio',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main/',
-                    'audio': 'cards_setof12_picking_instructions',
-                    'audioTypes': ['mp3'],
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'nextButtonText': 'Next',
-                    'showPreviousButton': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-                'majority-select-1': {
-                    'kind': 'exp-lookit-images-audio',
-                    'audio': 'cards_selected_feedback',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; images.push({ id: String(i + 1), src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: false, correct: true }); } return { images: images, selectedCards: [] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false
-                },
-                'majority-select-1-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstSelection = expData[sequence[sequence.length - 1]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: [{ imageId: firstSelection, range: [0, 999], color: \'grey\' }] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
+            'majority-select-2-combined': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstFrameId = sequence[sequence.length - 1]; const firstFrame = expData[firstFrameId]; console.log("First frame ID:", firstFrameId); console.log("First frame data:", firstFrame); console.log("Event timings:", firstFrame?.eventTimings); const clickEvent = firstFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); console.log("Click event:", clickEvent); const firstSelection = clickEvent?.imageId; console.log("First selection:", firstSelection); let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === firstSelection; images.push({ id: cardNum, src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected, feedbackAudio: "cards_selected_feedback" }); } return { images: images, audio: "cards_selected_next", highlights: [] }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audioTypes': ['mp3'],
+                'choiceRequired': true,
+                'feedbackAudio': true,
+                'waitForEndAudio': true,
+                 'showReplayButton': false,
+                'showPreviousButton': false,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'nextButtonDelay': 0,
+                'parentTextBlock': {
+                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                    'backgroundColor': '#f8f3bf',
+                    'fontSize': '12px',
+                }
+            },
 
-                'majority-select-2': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelection = expData[sequence[sequence.length - 2]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === previousSelection; images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, selectedCards: [previousSelection], highlights: [{ imageId: previousSelection, range: [0, 999], color: \'grey\' }] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_next',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false
-                },
-                'majority-select-2-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); images.push({ id: cardNum, src: \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-                'majority-select-3': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = previousSelections.includes(cardNum); images.push({ id: cardNum, src: \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, selectedCards: previousSelections, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_last',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'waitForEndAudio': false
-                },
+            'majority-select-3-combined': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const secondLastFrameId = sequence[sequence.length - 2]; const lastFrameId = sequence[sequence.length - 1]; const secondLastFrame = expData[secondLastFrameId]; const lastFrame = expData[lastFrameId]; const secondLastClickEvent = secondLastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const lastClickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const secondLastSelection = secondLastClickEvent?.imageId; const lastSelection = lastClickEvent?.imageId; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isPreviouslySelected = cardNum === secondLastSelection || cardNum === lastSelection; images.push({ id: cardNum, src: "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isPreviouslySelected, feedbackAudio: "cards_selected_reveal_transition" }); } return { images: images, audio: "cards_selected_last", highlights: [] }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audioTypes': ['mp3'],
+                'choiceRequired': true,
+                'feedbackAudio': true,
+                 'showReplayButton': false,
+                'showPreviousButton': false,
+                'waitForEndAudio': true,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'nextButtonDelay': 0,
+                'parentTextBlock': {
+                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                    'backgroundColor': '#f8f3bf',
+                    'fontSize': '12px',
+                }
+            },
 
-                'majority-reveal-cardbacks': {
+            'majority-reveal-stars': {
+                'kind': 'exp-lookit-images-audio',
+                'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const frameIds = [sequence[sequence.length - 3], sequence[sequence.length - 2], sequence[sequence.length - 1]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? "star_hd_selected.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
+                'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                'audio': 'cards_selected_reveal',
+                'waitForEndAudio': true,
+                'canMakeChoiceBeforeAudioFinished': false,
+                'mustPlay': false,
+                 'showReplayButton': false,
+                'showPreviousButton': false,
+                'mustPlayCount': 0,
+                'minDurationToAudioEnd': 0,
+                'audioTypes': ['mp3']
+            },
+
+            'majority-reveal-feedback': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); images.push({ id: String(i + 1), src: \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: allSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal_transition',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-                'majority-reveal-stars': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? \'star_hd_selected.png\' : \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-                'majority-reveal-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 7]].selectedImage, expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? \'star_hd_selected.png\' : \'card_back_hd.png\', left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const frameIds = [sequence[sequence.length - 4], sequence[sequence.length - 3], sequence[sequence.length - 2]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); images.push({ id: cardNum, src: isSelected ? "star_hd_selected.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audio': 'majority_cards_selected_feedback',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
                     'audioTypes': ['mp3']
                 },
 
-                'majority-surprise-rating': {
+                'majority-surprise-rating-combined': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: \'not_surprised\', src: \'not_surprised.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: \'a_little_surprised\', src: \'a_little_surprised.png\', left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: \'very_surprised\', src: \'very_surprised.png\', left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); return { images: images }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = [{id: "background", src: "3_stars.png", left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: "not_surprised", src: "not_surprised.png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_not_why" }); images.push({ id: "a_little_surprised", src: "a_little_surprised.png", left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_little_why" }); images.push({ id: "very_surprised", src: "very_surprised.png", left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_very_why" }); return { images: images }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audio': 'surprise_scale',
                     'audioTypes': ['mp3'],
                     'choiceRequired': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
+                    'nextButtonDelay': 7000,
+                    'feedbackAudio': true,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'highlights': [ 'fontSize': '14px',
+                    'highlights': [
                         {
                             'range': [1.75, 2.75],
                             'imageId': 'not_surprised',
@@ -1430,68 +1124,75 @@ function generateProtocol(child, pastSessions) {
                         }
                     ]
                 },
-                'majority-surprise-why': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let theaudio = \'surprise_scale_not_why\'; let selectedImage = expData[sequence[sequence.length - 1]][\'selectedImage\']; if (selectedImage === \'a_little_surprised\') { theaudio = \'surprise_scale_little_why\'; } else if (selectedImage === \'very_surprised\') { theaudio = \'surprise_scale_very_why\'; } let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + \'.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: theaudio }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    }
-                },
+                
+                
                 'majority-surprise-how': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let selectedImage = expData[sequence[sequence.length - 2]][\'selectedImage\']; let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + \'.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: \'majority_cards_how\' }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId || "not_surprised"; let images = [{id: "background", src: "3_stars.png", left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + ".png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: "majority_cards_how-2" }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'audioTypes': ['mp3'],
                     'choiceRequired': false,
                     'autoProceed': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
+                        'backgroundColor': 'yellow'
                     }
                 },
+                
+                
                 'majority-transition': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let selectedImage = expData[sequence[sequence.length - 3]][\'selectedImage\']; let images = [{id: \'background\', src: \'3_stars.png\', left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: \'fill\'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + \'.png\', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: \'majority_transition\' }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false,
+                        'kind': 'exp-lookit-video',
+                        'video': {
+                            'top': 0,
+                            'left': 0,
+                            'width': 100,
+                            'source': '3_suns_majority_transition',
+                            'loop': false
+                        },
+                        'backgroundColor': 'black',
+                        'autoProceed': false,
+                        'parentTextBlock': {
+                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'backgroundColor': '#f8f3bf',
+                            'fontSize': '14px'
+                        },
+                        'showPreviousButton': false,
+                        'showReplayButton': false,
+                        'doRecording': false,
+                        'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                        'videoTypes': ['mp4']
+                    },
+
+                'minority-intro-0': {
+                    'kind': 'exp-lookit-video',
+                    'video': {
+                        'top': 0,
+                        'left': 0,
+                        'width': 100,
+                        'source': 'minority_transition_video',
+                        'loop': false
+                    },
+                    'backgroundColor': 'black',
                     'autoProceed': false,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    }
+                        'backgroundColor': '#f8f3bf',
+                        'fontSize': '14px'
+                    },
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
+                    'doRecording': false,
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'videoTypes': ['mp4']
                 },
 
-
-                // Now showing the key differences for minority frames in unsurprising condition
                 'minority-intro-1': {
                     'kind': 'exp-lookit-video',
                     'video': {
@@ -1508,9 +1209,8 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
@@ -1525,11 +1225,10 @@ function generateProtocol(child, pastSessions) {
                     'choiceRequired': true,
                     'correctChoice': 'sun',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
                     'maximumAudioImageLoop': 1,
@@ -1552,7 +1251,42 @@ function generateProtocol(child, pastSessions) {
                     ]
                     },
                 
-                'minority-intro-2': {
+                'minority-test-lose': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: \'sun\', src: \'sun_hd.png\', left: centerOffset, top: 30, width: 15, height: 35, feedbackAudio: \'control_question_losers_incorrect\' }); images.push({ id: \'dash\', src: \'dash_card.png\', left: centerOffset + spacing, top: 30, width: 15, height: 35, feedbackAudio: \'control_question_losers_correct\' }); return { images: images }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audio': 'control_question_losers',
+                    'audioTypes': ['mp3'],
+                    'choiceRequired': true,
+                    'correctChoice': 'dash',
+                    'feedbackAudio': true,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
+                    'minDuration': 0,
+                    'minDurationToAudioEnd': 0,
+                    'maximumAudioImageLoop': 1,
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf',
+                        'fontSize': '14px',
+                    },
+                    'highlights': [
+                        {
+                            'range': [5.5, 6.5],
+                            'imageId': 'sun',
+                            'color': 'blue'
+                        },
+                        {
+                            'range': [7, 8],
+                            'imageId': 'dash',
+                            'color': 'blue'
+                        }
+                    ]
+                    },
+
+                    'minority-intro-2': {
                     'kind': 'exp-lookit-video',
                     'video': {
                         'top': 0,
@@ -1568,303 +1302,208 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': '#f8f3bf',
                         'fontSize': '14px',
                     },
-                    'requiredDuration': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
+                    'showPreviousButton': false,
+                    'showReplayButton': true,
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
                     'videoTypes': ['mp4']
                 },
                 
-                'minority-test-lose': {
+                'minority-select-1-combined': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: \'sun\', src: \'sun_hd.png\', left: centerOffset, top: 30, width: 15, height: 35, feedbackAudio: \'control_question_losers_incorrect\' }); images.push({ id: \'dash\', src: \'dash_card.png\', left: centerOffset + spacing, top: 30, width: 15, height: 35, feedbackAudio: \'control_question_losers_correct\' }); return { images: images }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId; let images = []; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; const cardNum = String(i + 1); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? "card_back_marker_hd.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_feedback" }); } return { images: images, audio: "select_first_card", highlights: selectedImage ? [{ imageId: selectedImage, range: [0, 999], color: "blue" }] : [] }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'control_question_losers',
                     'audioTypes': ['mp3'],
                     'choiceRequired': true,
-                    'correctChoice': 'dash',
                     'feedbackAudio': true,
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
+                    'waitForEndAudio': true,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'minDuration': 0,
-                    'minDurationToAudioEnd': 0,
-                    'maximumAudioImageLoop': 1,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
                         'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'fontSize': '12px',
+                    }
+                },
+                
+                'minority-select-2-combined': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelection = expData[sequence[sequence.length - 1]]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === previousSelection; const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? "card_back_marker_hd.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_feedback", nonChoiceOption: isSelected }); } return { images: images, audio: "cards_selected_next", highlights: [] }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audioTypes': ['mp3'],
+                    'choiceRequired': true,
+                    'feedbackAudio': true,
+                    'waitForEndAudio': true,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'nextButtonDelay': 0,
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf',
+                        'fontSize': '12px',
+                    }
+                },
+                
+                'minority-select-3-combined': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstSelection = expData[sequence[sequence.length - 2]]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId; const secondSelection = expData[sequence[sequence.length - 1]]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === firstSelection || cardNum === secondSelection; const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? "card_back_marker_hd.png" : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, feedbackAudio: "cards_selected_reveal_transition", nonChoiceOption: isSelected }); } return { images: images, audio: "cards_selected_last", highlights: [] }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audioTypes': ['mp3'],
+                    'choiceRequired': true,
+                    'feedbackAudio': true,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'nextButtonDelay': 0,
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf',
+                        'fontSize': '12px',
+                    }
+                },
+                
+                'minority-reveal-suns': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const frameIds = [sequence[sequence.length - 3], sequence[sequence.length - 2], sequence[sequence.length - 1]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); let images = []; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isSelected ? (isMarked ? "sun_hd_selected.png" : "dash_card.png") : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audio': 'cards_selected_reveal',
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'mustPlay': false,
+                    'showReplayButton': false,
+                    'showPreviousButton': false,
+                    'mustPlayCount': 0,
+                    'minDurationToAudioEnd': 0,
+                    'audioTypes': ['mp3']
+                },
+                
+                'minority-reveal-feedback': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const frameIds = [sequence[sequence.length - 4], sequence[sequence.length - 3], sequence[sequence.length - 2]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); const correctSelections = selections.filter(selection => { const pos = parseInt(selection) - 1; const row = Math.floor(pos / 6); const col = pos % 6; return markedPositions.some(markedPos => markedPos[0] === row && markedPos[1] === col); }).length; const audioFile = correctSelections === 3 ? "minority_cards_selected_feedback" : "minority_cards_selected_feedback_fewerthan3"; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; let images = []; for (let i = 0; i < 12; i++) { const row = Math.floor(i / 6); const col = i % 6; const cardNum = String(i + 1); const isSelected = selections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isSelected ? (isMarked ? "sun_hd_selected.png" : "dash_card.png") : "card_back_hd.png", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, audio: audioFile }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audioTypes': ['mp3'],
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'mustPlay': true,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    'nextButtonDelay': 0,
+                    'minDurationToAudioEnd': 0
+                },
+                
+                'minority-surprise-rating-combined': {
+                    'kind': 'exp-lookit-images-audio',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const frameIds = [sequence[sequence.length - 5], sequence[sequence.length - 4], sequence[sequence.length - 3]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); const correctSelections = selections.filter(selection => { const pos = parseInt(selection) - 1; const row = Math.floor(pos / 6); const col = pos % 6; return markedPositions.some(markedPos => markedPos[0] === row && markedPos[1] === col); }).length; const backgroundImage = correctSelections === 0 ? "zero_suns.png" : correctSelections === 1 ? "one_sun.png" : correctSelections === 2 ? "two_suns.png" : "3_suns.png"; let images = [{id: "background", src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: "not_surprised", src: "not_surprised.png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_not_why" }); images.push({ id: "a_little_surprised", src: "a_little_surprised.png", left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_little_why" }); images.push({ id: "very_surprised", src: "very_surprised.png", left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true, feedbackAudio: "surprise_scale_very_why" }); return { images: images }; }',
+                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
+                    'audio': 'surprise_scale',
+                    'audioTypes': ['mp3'],
+                    'choiceRequired': true,
+                    'waitForEndAudio': true,
+                    'canMakeChoiceBeforeAudioFinished': false,
+                    'mustPlay': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    'mustPlayCount': 0,
+                    'minDurationToAudioEnd': 0,
+                    'nextButtonDelay': 7000,
+                    'feedbackAudio': true,
+                    'parentTextBlock': {
+                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'backgroundColor': '#f8f3bf'
                     },
                     'highlights': [
                         {
-                            'range': [5.5, 6.5],
-                            'imageId': 'sun',
-                            'color': 'blue'
+                            'range': [1.75, 2.75],
+                            'imageId': 'not_surprised',
+                            'color': 'yellow'
                         },
                         {
-                            'range': [7, 8],
-                            'imageId': 'dash',
-                            'color': 'blue'
+                            'range': [3.75, 4.75],
+                            'imageId': 'a_little_surprised',
+                            'color': 'yellow'
+                        },
+                        {
+                            'range': [5.75, 6.75],
+                            'imageId': 'very_surprised',
+                            'color': 'yellow'
                         }
                     ]
-                    },
-                
-                'minority-select-1': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: String(i + 1), src: isMarked ? \"card_back_marker_hd.png\" : \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: false, correct: true }); } return { images: images, markedPositions: markedPositions }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
                 },
-                'minority-select-1-feedback': {
+                
+                'minority-surprise-how': {
                     'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const firstSelection = expData[sequence[sequence.length - 1]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? \"card_back_marker_hd.png\" : \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, markedPositions: markedPositions, highlights: [{ imageId: firstSelection, range: [0, 999], color: \'grey\' }] }; }',
+                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const lastFrameId = sequence[sequence.length - 1]; const lastFrame = expData[lastFrameId]; const clickEvent = lastFrame?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage"); const selectedImage = clickEvent?.imageId || "not_surprised"; const frameIds = [sequence[sequence.length - 7], sequence[sequence.length - 6], sequence[sequence.length - 5]]; const selections = frameIds.map(frameId => expData[frameId]?.eventTimings?.find(event => event.eventType === "exp-lookit-images-audio:clickImage")?.imageId).filter(id => id !== undefined); const correctSelections = selections.filter(selection => { const pos = parseInt(selection) - 1; const row = Math.floor(pos / 6); const col = pos % 6; return markedPositions.some(markedPos => markedPos[0] === row && markedPos[1] === col); }).length; const backgroundImage = correctSelections === 0 ? "zero_suns.png" : correctSelections === 1 ? "one_sun.png" : correctSelections === 2 ? "two_suns.png" : "3_suns.png"; let images = [{id: "background", src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: "fill"}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + ".png", left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: "majority_cards_how-2" }; }',
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
                     'audioTypes': ['mp3'],
                     'choiceRequired': false,
+                    'showPreviousButton': false,
+                    'showReplayButton': false,
+                    'autoProceed': false,
                     'parentTextBlock': {
                         'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-
-                'minority-select-2': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelection = expData[sequence[sequence.length - 2]].selectedImage; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = cardNum === previousSelection; const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? \"card_back_marker_hd.png\" : \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, markedPositions: markedPositions, selectedCards: [previousSelection], highlights: [{ imageId: previousSelection, range: [0, 999], color: \'grey\' }] }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_next',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true,
-                    'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    },
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0
-                },
-                'minority-select-2-feedback': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? \"card_back_marker_hd.png\" : \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, markedPositions: markedPositions, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_feedback_first',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': false
-                },
-                'minority-select-3': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const previousSelections = [expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = previousSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? \"card_back_marker_hd.png\" : \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: isSelected, correct: !isSelected }); } return { images: images, markedPositions: markedPositions, selectedCards: previousSelections, highlights: previousSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_last',
-                    'audioTypes': ['mp3'],
-                    'choiceRequired': true
-                },
-
-                'minority-reveal-cardbacks': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage, expData[sequence[sequence.length - 1]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); images.push({ id: cardNum, src: isMarked ? \"card_back_marker_hd.png\" : \"card_back_hd.png\", left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images, highlights: allSelections.map(selection => ({ imageId: selection, range: [0, 999], color: \'grey\' })) }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal_transition',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-                'minority-reveal-suns': {
-                    'kind': 'exp-lookit-images-audio',
-                    'generateProperties': 'function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage, expData[sequence[sequence.length - 2]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); let cardSrc; if (isSelected) { if (isMarked) { cardSrc = \'sun_hd_selected.png\'; } else { cardSrc = \'dash_card.png\'; } } else if (isMarked) { cardSrc = \'card_back_marker_hd.png\'; } else { cardSrc = \'card_back_hd.png\'; } images.push({ id: cardNum, src: cardSrc, left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }',
-                    'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
-                    'audio': 'cards_selected_reveal',
-                    'waitForEndAudio': false,
-                    'canMakeChoiceBeforeAudioFinished': true,
-                    'nextButtonDelay': 0,
-                    'requireAudioCount': 0,
-                    'requireVideoCount': 0,
-                    'mustPlay': false,
-                    'mustPlayCount': 0,
-                    'minDurationToAudioEnd': 0,
-                    'audioTypes': ['mp3']
-                },
-
-                    "minority-reveal-feedback": {
-                    "kind": "exp-lookit-images-audio",
-                    "generateProperties": "function(expData, sequence, child, pastSessions) { const markedPositions = [[0,1], [0,4], [1,1]]; const cardWidth = 15; const cardHeight = 35; const cardsPerRow = 6; const totalRows = 2; const horizontalSpacing = 16; const verticalSpacing = 40; const totalWidth = (cardsPerRow * cardWidth) + ((cardsPerRow - 1) * (horizontalSpacing - cardWidth)); const totalHeight = (totalRows * cardHeight) + ((totalRows - 1) * (verticalSpacing - cardHeight)); const startLeft = (100 - totalWidth) / 2; const startTop = (100 - totalHeight) / 2; const allSelections = [expData[sequence[sequence.length - 7]].selectedImage, expData[sequence[sequence.length - 5]].selectedImage, expData[sequence[sequence.length - 3]].selectedImage]; let images = []; for (let i = 0; i < 12; i++) { const col = i % 6; const row = Math.floor(i / 6); const cardNum = String(i + 1); const isSelected = allSelections.includes(cardNum); const isMarked = markedPositions.some(pos => pos[0] === row && pos[1] === col); let cardSrc; if (isSelected) { if (isMarked) { cardSrc = 'sun_hd_selected.png'; } else { cardSrc = 'dash_card.png'; } } else if (isMarked) { cardSrc = 'card_back_marker_hd.png'; } else { cardSrc = 'card_back_hd.png'; } images.push({ id: cardNum, src: cardSrc, left: startLeft + (col * horizontalSpacing), top: startTop + (row * verticalSpacing), width: cardWidth, height: cardHeight, nonChoiceOption: true }); } return { images: images }; }",
-                    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-                    "audio": "minority_cards_selected_feedback",
-                    "waitForEndAudio": false,
-                    "audioTypes": ["mp3"]
-                },
-                
-                "minority-surprise-rating": {
-                "kind": "exp-lookit-images-audio",
-                "generateProperties": "function(expData, sequence, child, pastSessions) { const allSelections = [expData[sequence[sequence.length - 8]].selectedImage, expData[sequence[sequence.length - 6]].selectedImage, expData[sequence[sequence.length - 4]].selectedImage]; const markedPositions = [[0,1], [0,4], [1,1]]; const correctSuns = allSelections.filter(selection => markedPositions.some(pos => pos[0] === Math.floor((parseInt(selection) - 1) / 6) && pos[1] === (parseInt(selection) - 1) % 6)).length; const backgroundImage = correctSuns === 1 ? 'one_sun.png' : (correctSuns === 2 ? 'two_suns.png' : '3_suns.png'); let images = [{id: 'background', src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: 'fill'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const spacing = 10; const startX = (100 - (3 * ratingWidth + 2 * spacing)) / 2; images.push({ id: 'not_surprised', src: 'not_surprised.png', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: 'a_little_surprised', src: 'a_little_surprised.png', left: startX + ratingWidth + spacing, top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); images.push({ id: 'very_surprised', src: 'very_surprised.png', left: startX + 2 * (ratingWidth + spacing), top: ratingY, width: ratingWidth, height: ratingHeight, correct: true }); return { images: images }; }",
-                "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-                "audio": "surprise_scale",
-                "audioTypes": ["mp3"],
-                "choiceRequired": true,
-                "waitForEndAudio": false,
-                "parentTextBlock": {
-                "text": '<h3>For Parents</h3><p><h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p></p>',
-                "backgroundColor": "#f8f3bf"
-                },
-                    "highlights": [
-                    {
-                        "range": [1.75, 2.75],
-                        "imageId": "not_surprised",
-                        "color": "yellow"
-                    },
-                    {
-                        "range": [3.75, 4.75],
-                        "imageId": "a_little_surprised",
-                        "color": "yellow"
-                    },
-                    {
-                        "range": [5.75, 6.75],
-                        "imageId": "very_surprised",
-                        "color": "yellow"
+                        'backgroundColor': '#f8f3bf'
                     }
-                ]
-            },
-
-"minority-surprise-why": {
-    "kind": "exp-lookit-images-audio",
-    "generateProperties": "function(expData, sequence, child, pastSessions) { let theaudio = 'surprise_scale_not_why'; let selectedImage = expData[sequence[sequence.length - 1]]['selectedImage']; if (selectedImage === 'a_little_surprised') { theaudio = 'surprise_scale_little_why'; } else if (selectedImage === 'very_surprised') { theaudio = 'surprise_scale_very_why'; } const allSelections = [expData[sequence[sequence.length - 9]].selectedImage, expData[sequence[sequence.length - 7]].selectedImage, expData[sequence[sequence.length - 5]].selectedImage]; const markedPositions = [[0,1], [0,4], [1,1]]; const correctSuns = allSelections.filter(selection => markedPositions.some(pos => pos[0] === Math.floor((parseInt(selection) - 1) / 6) && pos[1] === (parseInt(selection) - 1) % 6)).length; const backgroundImage = correctSuns === 1 ? 'one_sun.png' : (correctSuns === 2 ? 'two_suns.png' : '3_suns.png'); let images = [{id: 'background', src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: 'fill'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + '.png', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: theaudio }; }",
-    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-    "audioTypes": ["mp3"],
-    "choiceRequired": false,
-    "autoProceed": false,
-    "parentTextBlock": {
-        "text": '<h3>For Parents</h3><p><h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p></p>',
-        "backgroundColor": "#f8f3bf"
-    }
-},
-
-"minority-surprise-how": {
-    "kind": "exp-lookit-images-audio",
-    "generateProperties": "function(expData, sequence, child, pastSessions) { let selectedImage = expData[sequence[sequence.length - 2]]['selectedImage']; const allSelections = [expData[sequence[sequence.length - 10]].selectedImage, expData[sequence[sequence.length - 8]].selectedImage, expData[sequence[sequence.length - 6]].selectedImage]; const markedPositions = [[0,1], [0,4], [1,1]]; const correctSuns = allSelections.filter(selection => markedPositions.some(pos => pos[0] === Math.floor((parseInt(selection) - 1) / 6) && pos[1] === (parseInt(selection) - 1) % 6)).length; const backgroundImage = correctSuns === 1 ? 'one_sun.png' : (correctSuns === 2 ? 'two_suns.png' : '3_suns.png'); let images = [{id: 'background', src: backgroundImage, left: 0, top: 0, width: 100, height: 100, nonChoiceOption: true, position: 'fill'}]; const ratingWidth = 20; const ratingHeight = 35; const ratingY = 50; const startX = 40; images.push({ id: selectedImage, src: selectedImage + '.png', left: startX, top: ratingY, width: ratingWidth, height: ratingHeight, nonChoiceOption: true }); return { images: images, audio: 'majority_cards_how' }; }",
-    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-    "audioTypes": ["mp3"],
-    "choiceRequired": false,
-    "autoProceed": false,
-    "parentTextBlock": {
-        "text": '<h3>For Parents</h3><p><h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p></p>',
-        "backgroundColor": "#f8f3bf"
-    }
-},
-        
-        "explore-more-test": {
-            "kind": "exp-lookit-images-audio",
-            "generateProperties": "function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: 'same', src: 'sun_dash_cards.png', left: centerOffset, top: 30, width: 25, height: 45 }); images.push({ id: 'different', src: 'background_2.png', left: centerOffset + spacing, top: 30, width: 25, height: 45 }); return { images: images }; }",
-            "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
-            "audio": "exploration_selection",
-            "audioTypes": ["mp3"],
-            "choiceRequired": true,
-            "parentTextBlock": {
-                "text": "Please don’t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say ‘Okay!’ when your child answers - don’t give any hints or say whether you agree!",
-                "backgroundColor": "#f8f3bf"
-            },
-    "highlights": [
-      {
-        "range": [8, 10],
-        "imageId": "same",
-        "color": "yellow"
-      },
-      {
-        "range": [11.5, 13.5],
-        "imageId": "different",
-        "color": "yellow"
-      }
-    ]
-        }
+                },
+                        
+                "explore-more-test": {
+                    "kind": "exp-lookit-images-audio",
+                    "generateProperties": "function(expData, sequence, child, pastSessions) { let images = []; const centerOffset = 15; const spacing = 50; images.push({ id: 'same', src: 'sun_dash_cards.png', left: centerOffset, top: 30, width: 25, height: 45 }); images.push({ id: 'different', src: 'background_2.png', left: centerOffset + spacing, top: 30, width: 25, height: 45 }); return { images: images }; }",
+                    "baseDir": "https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main",
+                    "audio": "exploration_selection",
+                    "audioTypes": ["mp3"],
+                    "choiceRequired": true,
+                    'showPreviousButton': false,
+                            'showReplayButton': true,
+                    "parentTextBlock": {
+                        "text": "Please don’t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say ‘Okay!’ when your child answers - don’t give any hints or say whether you agree!",
+                        "backgroundColor": "#f8f3bf"
+                    },
+                        "highlights": [
+                          {
+                            "range": [8, 10],
+                            "imageId": "same",
+                            "color": "yellow"
+                          },
+                          {
+                            "range": [11.5, 13.5],
+                            "imageId": "different",
+                            "color": "yellow"
+                          }
+                        ]
+                            }
 
                 // Using same sequence as surprising condition
             },
             sequence: [
                 'welcome',
-                'study-intro',
                 'welcome-to-my-game',
                 'majority-intro-1',
                 'majority-test-win',
-                'majority-test-win-feedback',
                 'majority-test-lose',
-                'majority-test-lose-feedback',
                 'majority-intro-2',
-                'majority-your-turn',
-                'majority-your-turn-instructions',
-                'majority-select-1',
-                'majority-select-1-feedback',
-                'majority-select-2',
-                'majority-select-2-feedback',
-                'majority-select-3',
-                'majority-reveal-cardbacks',
+                'majority-select-1-combined',
+                'majority-select-2-combined',
+                'majority-select-3-combined',
                 'majority-reveal-stars',
                 'majority-reveal-feedback',
-                'majority-surprise-rating',
-                'majority-surprise-why',
+                'majority-surprise-rating-combined',
                 'majority-surprise-how',
                 'majority-transition',
+                'minority-intro-0',
                 'minority-intro-1',
                 'minority-test-win',
-                'minority-test-win-feedback',
                 'minority-test-lose',
-                'minority-test-lose-feedback',
                 'minority-intro-2',
-                'minority-select-1',
-                'minority-select-1-feedback',
-                'minority-select-2',
-                'minority-select-2-feedback',
-                'minority-select-3',
-                'minority-reveal-cardbacks',
+                'minority-select-1-combined',
+                'minority-select-2-combined',
+                'minority-select-3-combined',
                 'minority-reveal-suns',
                 'minority-reveal-feedback',
-                'minority-surprise-rating',
-                'minority-surprise-why',
+                'minority-surprise-rating-combined',
                 'minority-surprise-how',
                 'explore-more-test',
                 'video-config',
