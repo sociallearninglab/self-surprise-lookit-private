@@ -154,10 +154,24 @@ function generateProtocol(child, pastSessions) {
                         }
                     ],
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Click next when you\'re ready to continue!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    }, 
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    },
                     'nextButtonText': 'Next',
                     'showPreviousButton': false,
                     'showReplayButton': true
@@ -176,9 +190,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'doRecording': false,
                     'baseDir': 'https://raw.githubusercontent.com/sociallearninglab/self-surprise-lookit-private/main',
@@ -208,9 +236,23 @@ function generateProtocol(child, pastSessions) {
                     'maximumAudioImageLoop': 1,
                     'mustPlayFeedback': true,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'highlights': [
                         {
@@ -239,9 +281,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': 'Click Next when you\'re ready to continue',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'showPreviousButton': false,
                     'showReplayButton': true,
@@ -263,10 +319,24 @@ function generateProtocol(child, pastSessions) {
                 'canMakeChoiceBeforeAudioFinished': false,
                 'nextButtonDelay': 0,
                 'parentTextBlock': {
-                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                    'backgroundColor': '#f8f3bf',
-                    'fontSize': '12px',
-                }
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    }
             },
 
             'majority-select-2-combined': {
@@ -282,10 +352,24 @@ function generateProtocol(child, pastSessions) {
                 'canMakeChoiceBeforeAudioFinished': false,
                 'nextButtonDelay': 0,
                 'parentTextBlock': {
-                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                    'backgroundColor': '#f8f3bf',
-                    'fontSize': '12px',
-                }
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    }
             },
 
             'majority-select-3-combined': {
@@ -301,10 +385,24 @@ function generateProtocol(child, pastSessions) {
                 'canMakeChoiceBeforeAudioFinished': false,
                 'nextButtonDelay': 0,
                 'parentTextBlock': {
-                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                    'backgroundColor': '#f8f3bf',
-                    'fontSize': '12px',
-                }
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    }
             },
 
  
@@ -323,9 +421,23 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     }
                 },
 
@@ -346,9 +458,23 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'feedbackAudio': true,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'highlights': [
                         {
@@ -383,9 +509,23 @@ function generateProtocol(child, pastSessions) {
                     'showPreviousButton': false,
                     'showReplayButton': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted.</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px'
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     }
                 },
                 
@@ -406,8 +546,23 @@ function generateProtocol(child, pastSessions) {
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': 'yellow'
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     }
                 },
                 
@@ -424,9 +579,23 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': 'black',
                         'autoProceed': false,
                         'parentTextBlock': {
-                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                            'backgroundColor': '#f8f3bf',
-                            'fontSize': '14px'
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
                         },
                         'showPreviousButton': false,
                         'showReplayButton': false,
@@ -447,9 +616,23 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': 'black',
                         'autoProceed': false,
                         'parentTextBlock': {
-                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                            'backgroundColor': '#f8f3bf',
-                            'fontSize': '14px'
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
                         },
                         'showPreviousButton': false,
                         'showReplayButton': true,
@@ -470,9 +653,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'showPreviousButton': false,
                     'showReplayButton': true,
@@ -503,9 +700,23 @@ function generateProtocol(child, pastSessions) {
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'highlights': [
                         {
@@ -533,9 +744,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'showPreviousButton': false,
                     'showReplayButton': true,
@@ -557,10 +782,24 @@ function generateProtocol(child, pastSessions) {
                     'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '12px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'minority-select-2-combined': {
@@ -576,10 +815,24 @@ function generateProtocol(child, pastSessions) {
                     'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '12px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'minority-select-3-combined': {
@@ -595,10 +848,24 @@ function generateProtocol(child, pastSessions) {
                     'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '12px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'minority-reveal-suns': {
@@ -614,9 +881,24 @@ function generateProtocol(child, pastSessions) {
                     'mustPlayCount': 0,
                     'durationSeconds': 10,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    },
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        },
                     'minDurationToAudioEnd': 0,
                     'audioTypes': ['mp3'],
                     'autoProceed': false
@@ -638,9 +920,24 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'feedbackAudio': true,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    },
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        },
                     'highlights': [
                         {
                             'range': [5, 7],
@@ -673,10 +970,24 @@ function generateProtocol(child, pastSessions) {
                     'showPreviousButton': false,
                     'showReplayButton': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted.</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px'
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'minority-surprise-how': {
@@ -690,9 +1001,24 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'final-thank-you': {
@@ -942,9 +1268,23 @@ function generateProtocol(child, pastSessions) {
                     'maximumAudioImageLoop': 1,
                     'mustPlayFeedback': true,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'highlights': [
                         {
@@ -973,9 +1313,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': 'Click Next when you\'re ready to continue',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'showPreviousButton': false,
                     'showReplayButton': true,
@@ -997,10 +1351,24 @@ function generateProtocol(child, pastSessions) {
                 'canMakeChoiceBeforeAudioFinished': false,
                 'nextButtonDelay': 0,
                 'parentTextBlock': {
-                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                    'backgroundColor': '#f8f3bf',
-                    'fontSize': '12px',
-                }
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    }
             },
 
             'majority-select-2-combined': {
@@ -1016,10 +1384,24 @@ function generateProtocol(child, pastSessions) {
                 'canMakeChoiceBeforeAudioFinished': false,
                 'nextButtonDelay': 0,
                 'parentTextBlock': {
-                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                    'backgroundColor': '#f8f3bf',
-                    'fontSize': '12px',
-                }
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    }
             },
 
             'majority-select-3-combined': {
@@ -1035,10 +1417,24 @@ function generateProtocol(child, pastSessions) {
                 'canMakeChoiceBeforeAudioFinished': false,
                 'nextButtonDelay': 0,
                 'parentTextBlock': {
-                    'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                    'backgroundColor': '#f8f3bf',
-                    'fontSize': '12px',
-                }
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
+                    }
             },
 
  
@@ -1057,10 +1453,24 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
 
                 'majority-surprise-rating-combined': {
@@ -1080,9 +1490,23 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'feedbackAudio': true,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'highlights': [
                         {
@@ -1117,10 +1541,24 @@ function generateProtocol(child, pastSessions) {
                     'showPreviousButton': false,
                     'showReplayButton': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted.</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px'
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 
@@ -1140,9 +1578,24 @@ function generateProtocol(child, pastSessions) {
                     'mustPlayCount': 0,
                     'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': 'yellow'
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'majority-transition': {
@@ -1157,9 +1610,23 @@ function generateProtocol(child, pastSessions) {
                         'backgroundColor': 'black',
                         'autoProceed': false,
                         'parentTextBlock': {
-                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                            'backgroundColor': '#f8f3bf',
-                            'fontSize': '14px'
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
                         },
                         'showPreviousButton': false,
                         'showReplayButton': false,
@@ -1180,10 +1647,24 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px'
-                    },
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        },
                     'showPreviousButton': false,
                     'showReplayButton': true,
                     'doRecording': false,
@@ -1203,9 +1684,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'showPreviousButton': false,
                     'showReplayButton': true,
@@ -1236,9 +1731,23 @@ function generateProtocol(child, pastSessions) {
                     'minDuration': 0,
                     'minDurationToAudioEnd': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'highlights': [
                         {
@@ -1266,9 +1775,23 @@ function generateProtocol(child, pastSessions) {
                     'backgroundColor': 'black',
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px',
+                        'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                        'fontSize': 'x-large',
+                        'css': {
+                            'background-color': '#f8f3bf',
+                            'width': '50vw',
+                            'height': '16vh',
+                            'margin': 'auto',
+                            'bottom': '2vh',
+                            'right': '0',
+                            'left': '0',
+                            'position': 'fixed',
+                            'padding': '10px 25px',
+                            'text-align': 'center',
+                            'display': 'table-cell',
+                            'vertical-align': 'middle',
+                            'border-radius': '15px'
+                        }
                     },
                     'showPreviousButton': false,
                     'showReplayButton': true,
@@ -1290,10 +1813,24 @@ function generateProtocol(child, pastSessions) {
                     'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '12px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
             
                 'minority-select-2-combined': {
@@ -1309,10 +1846,24 @@ function generateProtocol(child, pastSessions) {
                     'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '12px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
             
                 'minority-select-3-combined': {
@@ -1328,10 +1879,24 @@ function generateProtocol(child, pastSessions) {
                     'canMakeChoiceBeforeAudioFinished': false,
                     'nextButtonDelay': 0,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '12px',
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
             
                 'minority-reveal-suns': {
@@ -1345,10 +1910,30 @@ function generateProtocol(child, pastSessions) {
                     'showReplayButton': true,
                     'showPreviousButton': false,
                     'mustPlayCount': 0,
+                    
                     'minDurationToAudioEnd': 0,
                     'audioTypes': ['mp3'],
                     'durationSeconds': 10,
-                    'autoProceed': false
+                    'autoProceed': false,
+                    'parentTextBlock': {
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                                 
                 'minority-surprise-rating-combined': {
@@ -1367,8 +1952,23 @@ function generateProtocol(child, pastSessions) {
                         'durationSeconds': 10,
                         'feedbackAudio': true,
                         'parentTextBlock': {
-                            'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                            'backgroundColor': '#f8f3bf'
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
                         },
                         'highlights': [
                             {
@@ -1402,10 +2002,24 @@ function generateProtocol(child, pastSessions) {
                     'showPreviousButton': false,
                     'showReplayButton': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted.</p>',
-                        'backgroundColor': '#f8f3bf',
-                        'fontSize': '14px'
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'minority-surprise-how': {
@@ -1419,9 +2033,24 @@ function generateProtocol(child, pastSessions) {
                     'durationSeconds': 10,
                     'autoProceed': false,
                     'parentTextBlock': {
-                        'text': '<h3>For Parents</h3><p>Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
-                        'backgroundColor': '#f8f3bf'
-                    }
+                            'text': '<h3 style="margin-top: 0; margin-bottom: 10px">For Parents</h3><p style="margin-top: 5px; line-height: 1.4">Please don\'t respond to anything on the screen. Feel free to replay the audio if your child was distracted. Please just say \'Okay!\' when your child answers - don\'t give any hints or say whether you agree!</p>',
+                            'fontSize': 'x-large',
+                            'css': {
+                                'background-color': '#f8f3bf',
+                                'width': '50vw',
+                                'height': '16vh',
+                                'margin': 'auto',
+                                'bottom': '2vh',
+                                'right': '0',
+                                'left': '0',
+                                'position': 'fixed',
+                                'padding': '10px 25px',
+                                'text-align': 'center',
+                                'display': 'table-cell',
+                                'vertical-align': 'middle',
+                                'border-radius': '15px'
+                            }
+                        }
                 },
                 
                 'final-thank-you': {
