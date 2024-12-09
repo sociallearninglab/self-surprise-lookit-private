@@ -3,7 +3,13 @@
 ### repo structure 
 
 ```
+├── code
 ├── img
+├── ├── archive (old files)
 ├── mp3
+├── ├── archive (old files)
 ├── mp4
+├── ├── archive (old files)
+├── ├── raw/old (unedited files)
+├── stim
 ```
