@@ -8,6 +8,8 @@
 ├── ├── archive (old files)
 ├── mp3
 ├── ├── archive (old files)
+├── ├── ├── before normalization
+├── ├── ├── before normalization_2
 ├── mp4
 ├── ├── archive (old files)
 ├── ├── raw/old (unedited files)
